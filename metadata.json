@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: LinkDoni - Directory \u0026 AI Search",
+  "description": "Minimalist glassmorphism web application featuring a categorized directory, AI-powered search, user dashboard, and personalized feed reader.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
