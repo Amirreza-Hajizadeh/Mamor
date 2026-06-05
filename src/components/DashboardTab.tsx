@@ -16,19 +16,19 @@ export default function DashboardTab() {
   ];
 
   return (
-    <div className="px-5 py-4 pb-10 animate-in fade-in slide-in-from-bottom-4 duration-200">
-      <h2 className="text-[20px] font-black text-slate-800 dark:text-white tracking-tight mb-6 px-1">
-          سرویس‌ها
+    <div className="px-5 md:px-8 py-6 md:py-8 pb-10 animate-in fade-in slide-in-from-bottom-4 duration-200">
+      <h2 className="text-[20px] md:text-[24px] font-black text-slate-800 dark:text-white tracking-tight mb-6 px-1">
+          داشبورد
       </h2>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
         {SERVICES.map((s, i) => (
-          <div key={i} className="bg-white dark:bg-transparent border border-slate-200 dark:border-white/10 rounded-[20px] p-5 flex flex-col items-center text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-[#1a1a24] shadow-sm dark:shadow-none transition-colors">
-            <div className={`w-16 h-16 rounded-[20px] ${s.bg} flex items-center justify-center mb-4`}>
-              <s.icon size={28} className={s.color} />
+          <div key={i} className="bg-white dark:bg-transparent border border-slate-200 dark:border-white/10 rounded-[20px] md:rounded-[24px] p-5 md:p-6 flex flex-col items-center text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-[#1a1a24] shadow-sm dark:shadow-none transition-colors group">
+            <div className={`w-16 h-16 md:w-20 md:h-20 rounded-[20px] md:rounded-[24px] ${s.bg} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform`}>
+              <s.icon size={32} className={`md:scale-125 ${s.color}`} />
             </div>
-            <h3 className="text-[15px] font-bold text-slate-800 dark:text-white mb-2">{s.title}</h3>
-            <p className="text-[11px] text-slate-500 dark:text-[#7a7a8c] leading-relaxed mb-4 font-medium flex-1">
+            <h3 className="text-[15px] md:text-[17px] font-bold text-slate-800 dark:text-white mb-2">{s.title}</h3>
+            <p className="text-[11px] md:text-[13px] text-slate-500 dark:text-[#7a7a8c] leading-relaxed mb-5 font-medium flex-1">
               {s.subtitle}
             </p>
             <div className={`text-[10px] font-bold text-white px-3 py-1 rounded-full ${s.badgeColor}`}>

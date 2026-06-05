@@ -6,7 +6,7 @@ export default function ProfileView({ onClose, toggleTheme, isDark }: any) {
     <div className="absolute inset-0 bg-slate-50 dark:bg-[#0f0f13] z-[100] animate-in slide-in-from-bottom-6 duration-200 overflow-y-auto w-full h-full pb-10 flex flex-col items-center transition-colors">
       
       {/* Header */}
-      <div className="w-full max-w-[420px] sticky top-0 z-20 bg-slate-50/90 dark:bg-[#0f0f13]/90 backdrop-blur-md px-5 py-4 flex justify-between items-center border-b border-slate-200 dark:border-white/5 transition-colors">
+      <div className="w-full max-w-[600px] sticky top-0 z-20 bg-slate-50/90 dark:bg-[#0f0f13]/90 backdrop-blur-md px-5 py-4 flex justify-between items-center border-b border-slate-200 dark:border-white/5 transition-colors">
         <button onClick={onClose} className="text-slate-800 dark:text-white active:scale-95 transition-transform flex items-center gap-2">
            <ChevronRight size={22} className="rotate-180" />
            <span className="font-bold text-[16px]">پروفایل من</span>
@@ -16,7 +16,7 @@ export default function ProfileView({ onClose, toggleTheme, isDark }: any) {
         </button>
       </div>
 
-      <div className="w-full max-w-[420px] px-5 pt-8 pb-2 relative">
+      <div className="w-full max-w-[600px] px-5 pt-8 pb-2 relative">
         <div className="absolute top-0 right-0 w-48 h-48 bg-iran-blue/10 dark:bg-purple-600/10 rounded-full blur-[60px] pointer-events-none -z-10"></div>
         
         <div className="flex items-start justify-between mb-6">

@@ -43,7 +43,7 @@ export default function LinkDoniTab() {
 
   return (
     <div className="pb-12 animate-in fade-in duration-200">
-      <div className="mb-4 relative px-5 pt-4">
+      <div className="mb-4 relative px-5 md:px-8 pt-6 md:pt-8">
         <div className="flex items-center gap-3 bg-white dark:bg-[#1a1a24] border border-slate-200 dark:border-white/5 shadow-sm p-1.5 rounded-full focus-within:border-iran-blue focus-within:shadow-md transition-all">
           <div className="p-2.5 text-slate-400 dark:text-[#7a7a8c] shrink-0">
             <Search size={18} strokeWidth={2.5} />
@@ -60,14 +60,14 @@ export default function LinkDoniTab() {
       </div>
 
       {recentlyViewed.length > 0 && (
-        <div className="px-5 mb-6">
-          <h2 className="font-bold text-[16px] text-slate-800 dark:text-white mb-3 tracking-tight">بازدیدهای اخیر</h2>
-          <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
+        <div className="px-5 md:px-8 mb-6">
+          <h2 className="font-bold text-[16px] md:text-[18px] text-slate-800 dark:text-white mb-4 tracking-tight">بازدیدهای اخیر</h2>
+          <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
             {recentlyViewed.map(site => (
               <div 
                 key={site.id} 
                 onClick={() => handleSiteClick(site)}
-                className="flex-shrink-0 w-[140px] bg-white dark:bg-[#1a1a24] border border-slate-200/60 dark:border-white/5 shadow-sm rounded-2xl p-3 flex flex-col gap-2 cursor-pointer transition-all hover:bg-slate-50 dark:hover:bg-[#20202a] active:scale-[0.98]"
+                className="flex-shrink-0 w-[140px] md:w-[180px] bg-white dark:bg-[#1a1a24] border border-slate-200/60 dark:border-white/5 shadow-sm rounded-[20px] p-4 flex flex-col gap-3 cursor-pointer transition-all hover:bg-slate-50 dark:hover:bg-[#20202a] active:scale-[0.98]"
               >
                 <div className="flex items-center gap-2">
                   <div className={`w-8 h-8 rounded-lg bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-[18px] font-black shrink-0 ${site.logoColor}`}>
@@ -82,11 +82,11 @@ export default function LinkDoniTab() {
         </div>
       )}
 
-      <div className="px-5 mb-3">
-        <h2 className="font-bold text-[16px] text-slate-800 dark:text-white tracking-tight">دسته‌بندی‌ها</h2>
+      <div className="px-5 md:px-8 mb-4">
+        <h2 className="font-bold text-[16px] md:text-[18px] text-slate-800 dark:text-white tracking-tight">دسته‌بندی‌ها</h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 px-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 px-5 md:px-8">
         {CATEGORIES.map(cat => (
           <button 
             key={cat.id}
@@ -110,7 +110,7 @@ export default function LinkDoniTab() {
 function CategorySites({ category, onBack, onSiteClick }: any) {
   return (
     <div className="pb-12 animate-in slide-in-from-right-4 duration-300">
-      <div className="px-6 pt-4 flex items-center justify-between mb-8 sticky top-0 bg-iran-khaki/90 dark:bg-[#020617]/90 backdrop-blur-md py-4 z-10 border-b border-transparent dark:border-transparent">
+      <div className="px-6 md:px-10 pt-4 flex items-center justify-between mb-8 sticky top-0 bg-iran-khaki/90 dark:bg-[#0f0f13]/90 backdrop-blur-md py-4 z-10 border-b border-transparent dark:border-transparent">
         <button className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 active:scale-95 transition-transform">
           <SlidersHorizontal size={20} />
         </button>
@@ -119,23 +119,23 @@ function CategorySites({ category, onBack, onSiteClick }: any) {
         </button>
       </div>
 
-      <div className="px-6 flex items-center gap-5 mb-8">
-        <div className={`w-16 h-16 rounded-[18px] bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800/50 shadow-sm flex items-center justify-center shrink-0`}>
-            <category.icon size={32} className={`${category.color.split(' ')[0]}`} />
+      <div className="px-6 md:px-10 flex items-center gap-6 mb-10">
+        <div className={`w-20 h-20 md:w-24 md:h-24 rounded-[20px] md:rounded-[24px] bg-white dark:bg-[#1a1a24] border border-slate-100 dark:border-slate-800/50 shadow-sm flex items-center justify-center shrink-0`}>
+            <category.icon size={36} className={`md:w-12 md:h-12 ${category.color.split(' ')[0]}`} />
         </div>
         <div>
-            <h2 className="font-black text-[22px] text-slate-800 dark:text-white tracking-tight mb-1">{category.title}</h2>
-            <p className="text-[12px] text-slate-500 dark:text-slate-400 font-medium">بهترین وب‌سایت‌ها و ابزارهای موضوع: {category.title}</p>
+            <h2 className="font-black text-[24px] md:text-[32px] text-slate-800 dark:text-white tracking-tight mb-2">{category.title}</h2>
+            <p className="text-[13px] md:text-[15px] text-slate-500 dark:text-[#7a7a8c] font-medium">بهترین وب‌سایت‌ها و ابزارهای موضوع: {category.title}</p>
         </div>
       </div>
 
-      <div className="px-6 flex gap-3 mb-6 overflow-x-auto no-scrollbar pb-2">
+      <div className="px-6 md:px-10 flex gap-3 mb-8 overflow-x-auto no-scrollbar pb-2">
         <button className="px-5 py-2 bg-slate-800 dark:bg-white text-white dark:text-slate-900 rounded-xl text-[12px] font-bold whitespace-nowrap shadow-sm">همه</button>
         <button className="px-5 py-2 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-[12px] font-medium whitespace-nowrap active:scale-95 transition-all">محبوب‌ترین</button>
         <button className="px-5 py-2 bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-[12px] font-medium whitespace-nowrap active:scale-95 transition-all">جدیدترین</button>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 px-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-6 md:px-10">
         {SITES.map(site => (
           <div key={site.id} onClick={() => onSiteClick(site)} className="bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800/50 shadow-sm rounded-2xl p-5 flex flex-col items-center text-center gap-2 cursor-pointer hover:shadow-md transition-all active:scale-[0.98]">
             <div className={`w-14 h-14 rounded-[14px] bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-[28px] mb-1 font-black ${site.logoColor}`}>
@@ -170,7 +170,7 @@ function SiteDetail({ site, onBack }: any) {
   const [tab, setTab] = useState('about');
   return (
     <div className="pb-12 animate-in slide-in-from-bottom-8 duration-300">
-      <div className="px-6 pt-4 flex items-center justify-between mb-8 sticky top-0 bg-iran-khaki/90 dark:bg-[#020617]/90 backdrop-blur-md py-4 z-10">
+      <div className="px-6 md:px-10 pt-4 flex items-center justify-between mb-8 sticky top-0 bg-iran-khaki/90 dark:bg-[#0f0f13]/90 backdrop-blur-md py-4 z-10">
         <div className="flex gap-3">
           <button className="w-10 h-10 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700/50 shadow-sm flex items-center justify-center text-slate-600 dark:text-slate-300 active:scale-95 transition-transform">
              <SlidersHorizontal size={20} />
@@ -184,23 +184,23 @@ function SiteDetail({ site, onBack }: any) {
         </button>
       </div>
 
-      <div className="px-6 flex flex-col items-center text-center mx-auto max-w-[280px]">
-        <div className={`w-24 h-24 rounded-[20px] bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800/50 shadow-sm flex items-center justify-center text-[48px] mb-6 font-black ${site.logoColor}`}>
+      <div className="px-6 md:px-10 flex flex-col items-center text-center mx-auto max-w-[400px]">
+        <div className={`w-24 h-24 md:w-32 md:h-32 rounded-[20px] md:rounded-[28px] bg-white dark:bg-[#1a1a24] border border-slate-100 dark:border-slate-800/50 shadow-sm flex items-center justify-center text-[48px] md:text-[64px] mb-6 font-black ${site.logoColor}`}>
           {site.logo}
         </div>
-        <h2 className="text-[24px] font-black text-slate-800 dark:text-white flex items-center gap-2 justify-center tracking-tight mb-1">
-          {site.name} <ShieldCheck size={22} className="text-iran-blue dark:text-sky-400" strokeWidth={2.5} />
+        <h2 className="text-[24px] md:text-[32px] font-black text-slate-800 dark:text-white flex items-center gap-2 justify-center tracking-tight mb-1">
+          {site.name} <ShieldCheck size={26} className="text-iran-blue dark:text-sky-400" strokeWidth={2.5} />
         </h2>
-        <div className="text-iran-blue dark:text-sky-400 font-bold text-[13px] mb-3">{site.url}</div>
-        <p className="text-[13px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-6">{site.desc}</p>
+        <div className="text-iran-blue dark:text-sky-400 font-bold text-[14px] md:text-[16px] mb-4">{site.url}</div>
+        <p className="text-[13px] md:text-[15px] text-slate-500 dark:text-[#7a7a8c] font-medium leading-relaxed mb-6">{site.desc}</p>
         
-        <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 px-4 py-2 rounded-xl text-[12px] font-bold mb-8">
-            <ShieldCheck size={18} className="text-iran-teal dark:text-teal-400" /> تضمین کیفیت: {site.rate} رضایت
+        <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 px-5 py-2.5 rounded-xl text-[13px] font-bold mb-10">
+            <ShieldCheck size={20} className="text-iran-teal dark:text-teal-400" /> تضمین کیفیت: {site.rate} رضایت
         </div>
       </div>
 
-      <div className="px-6 mb-6">
-        <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-[14px] p-1.5 flex gap-1 border border-slate-100 dark:border-slate-800/50">
+      <div className="px-6 md:px-10 mb-8 max-w-2xl mx-auto">
+        <div className="bg-slate-100/50 dark:bg-[#1a1a24] rounded-[14px] md:rounded-[20px] p-1.5 flex gap-1 border border-slate-100 dark:border-white/5">
           <button onClick={()=>setTab('about')} className={`flex-1 py-2 text-[12px] font-bold rounded-xl transition-all ${tab==='about' ? 'bg-white dark:bg-[#0f172a] text-slate-800 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}>معرفی</button>
           <button onClick={()=>setTab('learn')} className={`flex-1 py-2 text-[12px] font-bold rounded-xl transition-all ${tab==='learn' ? 'bg-white dark:bg-[#0f172a] text-slate-800 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}>آموزش‌ها</button>
           <button onClick={()=>setTab('comments')} className={`flex-1 py-2 text-[12px] font-bold rounded-xl transition-all ${tab==='comments' ? 'bg-white dark:bg-[#0f172a] text-slate-800 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'}`}>نظرات</button>
@@ -208,8 +208,8 @@ function SiteDetail({ site, onBack }: any) {
       </div>
 
       {tab === 'about' && (
-        <div className="px-6 space-y-4 animate-in fade-in duration-300">
-          <div className="bg-white dark:bg-[#0f172a] rounded-2xl p-6 border border-slate-100 dark:border-slate-800/50 shadow-sm">
+        <div className="px-6 md:px-10 space-y-6 max-w-2xl mx-auto animate-in fade-in duration-300">
+          <div className="bg-white dark:bg-[#1a1a24] rounded-2xl md:rounded-[24px] p-6 md:p-8 border border-slate-100 dark:border-white/5 shadow-sm">
             <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3 text-[15px]">معرفی جامع {site.name}</h3>
             <p className="text-[13px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
               {site.name} یکی از پیشروترین پلتفرم‌های جهان در حوزه فعالیت خود است. هدف اصلی این سرویس بهبود فرآیندها و ارائه راهکارهای نوین است. با استفاده از این ابزار، کاربران می‌توانند با اطمینان کامل به تکنولوژی‌های روز دسترسی داشته و از کیفیت خدمات بهره‌مند شوند.
@@ -240,8 +240,8 @@ function SiteDetail({ site, onBack }: any) {
       )}
 
       {tab === 'learn' && (
-        <div className="px-6 space-y-4 animate-in fade-in duration-300">
-             <div className="bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800/50 shadow-sm rounded-2xl p-4 flex flex-col justify-center cursor-pointer active:scale-[0.99] transition-transform group hover:bg-slate-50 dark:hover:bg-[#1e293b]">
+        <div className="px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto animate-in fade-in duration-300">
+             <div className="bg-white dark:bg-[#1a1a24] border border-slate-100 dark:border-white/5 shadow-sm rounded-2xl p-4 flex flex-col justify-center cursor-pointer active:scale-[0.99] transition-transform group hover:bg-slate-50 dark:hover:bg-[#20202a]">
                  <div className="w-full h-36 bg-slate-100 dark:bg-slate-800/50 rounded-[14px] flex items-center justify-center text-slate-300 dark:text-slate-700 relative overflow-hidden mb-3 border border-slate-200 dark:border-slate-800/80">
                      <div className="w-12 h-12 rounded-xl bg-white dark:bg-[#0f172a] shadow-sm flex items-center justify-center text-slate-800 dark:text-white group-hover:scale-110 transition-transform">
                          <PlayCircle size={24} />
@@ -251,8 +251,8 @@ function SiteDetail({ site, onBack }: any) {
                  <p className="text-[12px] text-slate-500 dark:text-slate-400 font-medium px-1">ویدیو آموزشی - ۳ دقیقه</p>
              </div>
              
-             <div className="bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800/50 shadow-sm rounded-2xl p-5 flex items-center gap-4 cursor-pointer active:scale-[0.99] transition-transform hover:bg-slate-50 dark:hover:bg-[#1e293b]">
-                 <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-[14px] flex items-center justify-center text-iran-blue dark:text-sky-400 shrink-0">
+             <div className="bg-white dark:bg-[#1a1a24] border border-slate-100 dark:border-white/5 shadow-sm rounded-2xl p-5 flex items-center md:flex-col md:text-center md:py-8 md:justify-center gap-4 cursor-pointer active:scale-[0.99] transition-transform hover:bg-slate-50 dark:hover:bg-[#20202a]">
+                 <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-50 dark:bg-[#0a0a0f] rounded-[14px] md:rounded-[18px] flex items-center justify-center text-iran-blue dark:text-sky-400 shrink-0">
                      <BookOpen size={20} />
                  </div>
                  <div>
@@ -264,13 +264,13 @@ function SiteDetail({ site, onBack }: any) {
       )}
 
       {tab === 'comments' && (
-        <div className="px-6 space-y-4 animate-in fade-in duration-300">
+        <div className="px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto animate-in fade-in duration-300">
             {[
                 { name: 'علی رضایی', role: 'کاربر', comment: 'رابط کاربری سایت عالیه و کار رو راحت کرده، خیلی روون و سریعه.', rate: 5 },
                 { name: 'سارا احمدی', role: 'کاربر', comment: 'از نظر ظاهری فوق‌العاده‌ست. خیلی به دلم نشست.', rate: 5 },
                 { name: 'محمد کریمی', role: 'کاربر', comment: 'بخشی از امکانات هنوز جای کار دارن ولی در کل ابزار مفیدیه.', rate: 4 }
             ].map((c, i) => (
-                <div key={i} className="bg-white dark:bg-[#0f172a] border border-slate-100 dark:border-slate-800/50 shadow-sm rounded-2xl p-5">
+                <div key={i} className="bg-white dark:bg-[#1a1a24] border border-slate-100 dark:border-white/5 shadow-sm rounded-2xl md:rounded-[20px] p-5">
                     <div className="flex justify-between items-start mb-3">
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-[14px] flex items-center justify-center text-slate-600 dark:text-slate-300 font-black text-[14px]">
